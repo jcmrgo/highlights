@@ -1,17 +1,21 @@
 {% extends "base.html" %}
-
+{% load humanize %}
 {% block content %}
-{% if user.is_authenticated %}
-<div class="masthead">
-  <h1> HIGHLIGHTS </h1>
-  <h2>welcome...</h2>
-  <p>Readymade sartorial seitan, DIY shoreditch bushwick wes anderson. Helvetica mumblecore bespoke 3 wolf moon. Readymade mlkshk bicycle rights gentrify, cliche single-origin coffee beard DIY locavore. Cray echo park twee, blog farm-to-table skateboard seitan photo booth. VHS wolf you probably haven't heard of them flexitarian echo park. Pitchfork cosby sweater mustache, dreamcatcher gluten-free post-ironic lomo cardigan hella readymade. Ennui fixie stumptown viral fap.
-
-Banh mi mlkshk twee, raw denim thundercats pitchfork fanny pack brunch ennui ethical kogi. Leggings artisan VHS authentic Austin, wayfarers kale chips small batch godard. Keffiyeh synth blog raw denim put a bird on it trust fund. Next level flexitarian portland, ethical beard locavore ethnic iphone. Helvetica 3 wolf moon banh mi, brooklyn food truck odd future biodiesel truffaut quinoa. Semiotics fixie flexitarian, small batch stumptown etsy 8-bit cliche craft beer godard carles. Gastropub bicycle rights pour-over post-ironic street art brunch.
-
-You probably haven't heard of them vinyl keytar put a bird on it thundercats, shoreditch pitchfork cred PBR dreamcatcher selvage tattooed brunch beard. Marfa pork belly sartorial messenger bag, next level odd future iphone cray. Pitchfork gentrify sustainable single-origin coffee, ennui typewriter readymade selvage direct trade marfa banh mi +1 VHS trust fund raw denim. Pitchfork chambray tumblr wayfarers biodiesel photo booth. 8-bit raw denim cred, aesthetic portland direct trade tattooed lo-fi pickled DIY pinterest scenester artisan. Street art direct trade chillwave wes anderson food truck. Seitan iphone narwhal carles readymade, craft beer tumblr ethnic DIY.
-
-PBR next level semiotics, biodiesel dreamcatcher portland pickled banksy. Fap keytar Austin vinyl +1 butcher. Keytar selvage carles yr mumblecore. Hella mixtape narwhal salvia quinoa blog. Gluten-free fingerstache skateboard american apparel salvia. Iphone hoodie semiotics, pickled synth locavore farm-to-table terry richardson 3 wolf moon. Letterpress next level mlkshk thundercats mixtape craft beer, lo-fi artisan scenester tattooed cardigan street art echo park food truck wayfarers.</p>
+<div class="highlights-feed">
+<div class="page-header">
+<h1>My Highlights</h1>
+<hr>	
 </div>
-{% endif %}
+
+{% for h in highlights %}
+<div class="row">
+	<div class="span5">
+		<h2>{{h.text}}</h2>
+		<p>{{ h.date_created|naturaltime }}</p>
+		<p>{{h.get_emotion_display}} {{h.get_bigness_display}}</p>
+		<hr>
+	</div>
+</div>
+{% endfor %}
+</div>
 {% endblock %}

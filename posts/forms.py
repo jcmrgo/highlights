@@ -1,6 +1,8 @@
+from django.forms import ModelForm
 from django.contrib.auth.models import User
+from posts.models import *
 
-class LoginForm(ModelForm):
+class HighlightForm(ModelForm):
   class Meta:
-    model = User
-    fields = ('email','password')
+    model = Highlight
+    exclude = ('user',)
