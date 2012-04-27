@@ -2,18 +2,21 @@
 {% load humanize %}
 {% block content %}
 <div class="highlights-feed">
-<div class="page-header">
-<h1>My Highlights</h1>
-<hr>	
-</div>
-
 {% for h in highlights %}
 <div class="row">
-	<div class="span5">
-		<h2>{{h.text}}</h2>
-		<p>{{ h.date_created|naturaltime }}</p>
-		<p>{{h.get_emotion_display}} {{h.get_bigness_display}}</p>
-		<hr>
+	<div class="span4">
+		<h5 class="h-date"><span>{{ h.date_created|date }}</span></h5>
+		<div class="h-date"></div>
+		<div class="highlight bigness-{{h.bigness}}">
+		<p class="{{ colores|random }}">
+		{% autoescape off %}
+		{% with h.text.split as desc %}
+		<span class="first-word">{{ desc|slice:":1"|join:" " }}</span> {{ desc|slice:"1:"|join:" " }}<a href="emotion/{{h.emotion}}"><span class="emotion emotion-{{h.emotion}}">:)</span></a>
+		{% endwith %}
+		{% endautoescape %}
+		</p>
+		</div>
+		
 	</div>
 </div>
 {% endfor %}

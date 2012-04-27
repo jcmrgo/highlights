@@ -11,7 +11,11 @@ urlpatterns = patterns('',
     (r'^login/$', 'django.contrib.auth.views.login'),
     (r'^logout/$', 'posts.views.logout_view'),
     (r'^$', 'posts.views.index'),
+    (r'^search/(?P<hashtag>\w+)/$', 'posts.views.hashtag_highlights'),
+    (r'^emotion/(?P<emotion>\w+)/$', 'posts.views.highlights_emotions'),
+    (r'^bigness/(?P<bigness>\w+)/$', 'posts.views.highlights_bigness'),
     (r'^add-highlight/$', 'posts.views.add_highlight'),
+    (r'^settings/$', 'posts.views.user_settings'),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

@@ -160,6 +160,8 @@ LOGGING = {
     }
 }
 
+AUTH_PROFILE_MODULE = 'posts.UserProfile'
+
 LOGIN_URL = "/login/"
 
 try:
