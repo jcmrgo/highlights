@@ -27,3 +27,49 @@
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
+body {
+  background-image: url(../img/scribble_light.png);
+}
+.icon-gray {
+  background-image: url("../img/glyphicons-halflings-gray.png");
+}
+.masthead {
+  text-align: center;
+}
+.btn-pink,
+.btn-pink:hover {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+}
+.btn-pink.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+.btn-pink {
+  background-color: #ff525f;
+  background-image: -moz-linear-gradient(top, #ff4c6b, #ff5a4c);
+  background-image: -ms-linear-gradient(top, #ff4c6b, #ff5a4c);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff4c6b), to(#ff5a4c));
+  background-image: -webkit-linear-gradient(top, #ff4c6b, #ff5a4c);
+  background-image: -o-linear-gradient(top, #ff4c6b, #ff5a4c);
+  background-image: linear-gradient(top, #ff4c6b, #ff5a4c);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4c6b', endColorstr='#ff5a4c', GradientType=0);
+  border-color: #ff5a4c #ff5a4c #ff1400;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+.btn-pink:hover,
+.btn-pink:active,
+.btn-pink.active,
+.btn-pink.disabled,
+.btn-pink[disabled] {
+  background-color: #ff5a4c;
+}
+.btn-pink:active,
+.btn-pink.active {
+  background-color: #ff2b19 \9;
+}
+.login-home-logo {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}

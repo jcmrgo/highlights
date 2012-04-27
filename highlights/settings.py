@@ -159,6 +159,9 @@ LOGGING = {
         },
     }
 }
+
+LOGIN_URL = "/login/"
+
 try:
     from settings_local import *
 except ImportError:

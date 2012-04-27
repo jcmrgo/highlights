@@ -1,3 +1,40 @@
 // Core variables and mixins
 @import "variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "mixins.less";
+
+body {
+  background-image: url(../img/scribble_light.png);
+}
+
+.icon-gray {
+  background-image: url("../img/glyphicons-halflings-gray.png");
+}
+
+.masthead {
+  text-align: center;
+}
+
+@darkPink:                       #8f3a45;
+@pink:                           #ff4c6b;
+@btnPinkBackground:              @pink;
+@btnPinkBackgroundHighlight:     spin(@btnPinkBackground, 15%);
+
+.btn-pink,
+.btn-pink:hover {
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  color: @white;
+}
+
+.btn-pink.active {
+  color: rgba(255,255,255,.75);
+}
+
+.btn-pink {
+  .buttonBackground(@btnPinkBackground, @btnPinkBackgroundHighlight);
+}
+
+.login-home-logo {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+

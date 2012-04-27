@@ -5,14 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HIGHLIGHTS</title>
   <!-- styles -->
-	<link href="{{ STATIC_URL }}css/highlights.css" rel="stylesheet" />
+
 	<link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
   <link href="{{ STATIC_URL }}css/responsive.css" rel="stylesheet">
+  <link href="{{ STATIC_URL }}css/highlights.css" rel="stylesheet" />
 	
 </head>
 
 <body>
-
+{% if user.is_authenticated %}
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/"><img src="{{ STATIC_URL }}img/logo_chico.png" /></a>
+      <div class="nav-collapse">
+          <ul class="nav">
+            <li>
+              <a href="#">Overview</a>
+            </li>
+            <li>
+              <a href="#">Scaffolding</a>
+            </li>
+            <li>
+              <a href="#">Settings</a>
+            </li>
+            <li>
+              <a href="#">Add Highlight</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
 <div class="container">
 {% block content %}{% endblock content %}
 </div>

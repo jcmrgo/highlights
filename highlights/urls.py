@@ -8,6 +8,8 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'highlights.views.home', name='home'),
     # url(r'^highlights/', include('highlights.foo.urls')),
+    (r'^login/$', 'django.contrib.auth.views.login'),
+    (r'^logout/$', 'posts.views.logout_view'),
     (r'^$', 'posts.views.index'),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
