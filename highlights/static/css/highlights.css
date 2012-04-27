@@ -127,7 +127,8 @@ body {
   font: 26px/28px "MenschBold", "Helvetica Neue", Helvetica;
 }
 .highlights-feed p a {
-  font: 26px/28px "Helvetica Neue", Helvetica;
+  color: #c5c5c5;
+  font: 18px/28px "Helvetica Neue", Helvetica;
 }
 .highlights-feed p.azul {
   color: #00afdb;
@@ -194,4 +195,76 @@ body {
 .highlights-feed div.emo-and-hashs {
   margin-bottom: 10px;
   margin-top: -5px;
+}
+.dashboard h5.h-date {
+  text-align: center;
+  margin-bottom: 0px;
+  color: #c5c5c5;
+}
+.dashboard h5.h-date span {
+  padding-right: 15px;
+  padding-left: 15px;
+  background-image: url(../img/scribble_light.png);
+}
+.dashboard div.h-date {
+  position: relative;
+  bottom: 10px;
+  border-top: 1px solid #c5c5c5;
+  z-index: -1;
+}
+.dashboard span.azul {
+  color: #00afdb;
+}
+.dashboard span.verde {
+  color: #73c167;
+}
+.dashboard span.rosa {
+  color: #f1607c;
+}
+.dashboard span.amarillo {
+  color: #ffd478;
+}
+.dashboard span.celeste {
+  color: #9de0d3;
+}
+.dashboard span.naranja {
+  color: #f79762;
+}
+.dashboard span.fiucha {
+  color: #ef5091;
+}
+.dashboard span.salmon {
+  color: #f48987;
+}
+.dashboard span.verde_limon {
+  color: #a0cf67;
+}
+.dashboard span.aqua {
+  color: #22bcb9;
+}
+.dashboard .big-number {
+  font: 68px/68px "MenschBoldInline", "Helvetica Neue", Helvetica;
+}
+.dashboard td {
+  text-align: center;
+}
+.dashboard span.emotion {
+  display: block;
+  text-indent: -9999px;
+  line-height: 30px;
+}
+.dashboard span.emotion.emotion-1 {
+  background: url(../img/face_happy.png) no-repeat;
+  background-position: 50%;
+}
+.dashboard span.emotion.emotion-2 {
+  background: url(../img/face_sad.png) no-repeat;
+  background-position: 50%;
+}
+.dashboard span.emotion.emotion-3 {
+  background: url(../img/face_angry.png) no-repeat;
+  background-position: 50%;
+}
+.dashboard table tbody tr:hover td {
+  background-color: transparent;
 }

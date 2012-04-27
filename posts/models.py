@@ -32,7 +32,7 @@ class Highlight(models.Model):
 	emotion =  models.IntegerField(choices=EMOTION_CHOICES, default=1)
 	bigness = models.IntegerField(choices=BIGNESS_CHOICES, default=3)
 	date_created = models.DateTimeField(auto_now_add=True, auto_now=False, editable=False)
-	share = models.BooleanField(default=False)
+	share = models.BooleanField("Public", default=False)
 	has_been_hashed = models.BooleanField(default=False)
 	def __unicode__(self):
 		return self.text

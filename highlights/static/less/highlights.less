@@ -136,7 +136,8 @@ body {
   p {
     font: 26px/28px "MenschBold", "Helvetica Neue", Helvetica;
     a {
-      font: 26px/28px "Helvetica Neue", Helvetica;
+      color: #c5c5c5;
+      font: 18px/28px "Helvetica Neue", Helvetica;
     }
     &.azul{ color:@azul;}
     &.verde{ color:@verde;}
@@ -185,4 +186,61 @@ body {
     margin-bottom: 10px;
     margin-top: -5px;
   }
+}
+.dashboard {
+  h5.h-date {
+    text-align: center;
+    margin-bottom: 0px;
+    color: #c5c5c5;
+  }
+  h5.h-date span {
+    padding-right: 15px;
+    padding-left: 15px;
+    background-image: url(../img/scribble_light.png);
+  }
+  div.h-date {
+    position: relative;
+    bottom: 10px;
+    border-top: 1px solid #c5c5c5;
+    z-index: -1;
+  }
+  span{
+    &.azul{ color:@azul;}
+    &.verde{ color:@verde;}
+    &.rosa{ color:@rosa;}
+    &.amarillo{ color:@amarillo;}
+    &.celeste{ color:@celeste;}
+    &.naranja{ color:@naranja;}
+    &.fiucha{ color:@fiucha;}
+    &.salmon{ color:@salmon;}
+    &.verde_limon{ color:@verde_limon;}
+    &.aqua{ color:@aqua;}
+  }
+  .big-number {
+    font: 68px/68px "MenschBoldInline", "Helvetica Neue", Helvetica;
+  }
+  td {
+    text-align: center;
+  }
+  span.emotion {
+  display: block;
+  text-indent: -9999px;
+  line-height: 30px;
+    &.emotion-1{
+      background: url(../img/face_happy.png) no-repeat;
+      background-position: 50%;
+    }
+    &.emotion-2{
+      background: url(../img/face_sad.png) no-repeat;
+      background-position: 50%;
+    }
+    &.emotion-3{
+      background: url(../img/face_angry.png) no-repeat;
+      background-position: 50%;
+    }
+  }
+  table tbody tr:hover td{
+  background-color: transparent;
+  }
+
 }

@@ -19,9 +19,19 @@ def index(request):
 
 @login_required
 def hashtag_highlights(request, hashtag):
-	highlights = [h.highlight for h in HighlightHashtag.objects.filter(hashtag__iexact=hashtag)]
+	highlights = [h.highlight for h in HighlightHashtag.objects.filter(hashtag__iexact=hashtag, highlight__user=request.user)]
 	colores = ["azul", "verde", "rosa","amarillo","celeste","naranja","fiucha","salmon","verde_limon","aqua"]
 	return render(request,'home.html',{'highlights':highlights,'colores':colores})
+
+@login_required
+def highlights_dashboard(request):
+	highlights = Highlight.objects.filter(user=request.user)
+	happy = highlights.filter(emotion=1, bigness=5).count()
+	sad = highlights.filter(emotion=2, bigness=5).count()
+	angry = highlights.filter(emotion=3, bigness=5).count()
+	colores = ["azul", "verde", "rosa","amarillo","celeste","naranja","fiucha","salmon","verde_limon","aqua"]
+	return render(request,'dashboard.html',{'highlights':highlights,'colores':colores, 'happy':happy,'sad':sad,'angry':angry})
+
 
 @login_required
 def highlights_emotions(request, emotion):
@@ -32,6 +42,12 @@ def highlights_emotions(request, emotion):
 @login_required
 def highlights_bigness(request, bigness):
 	highlights = Highlight.objects.filter(user=request.user, bigness=bigness)
+	colores = ["azul", "verde", "rosa","amarillo","celeste","naranja","fiucha","salmon","verde_limon","aqua"]
+	return render(request,'home.html',{'highlights':highlights,'colores':colores})
+
+@login_required
+def highlights_public(request):
+	highlights = Highlight.objects.filter(share=True)
 	colores = ["azul", "verde", "rosa","amarillo","celeste","naranja","fiucha","salmon","verde_limon","aqua"]
 	return render(request,'home.html',{'highlights':highlights,'colores':colores})
 
