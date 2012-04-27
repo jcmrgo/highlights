@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block content %}
+<div class="highlights-feed">
+<div class="page-header">
+<h1>Settings</h1>
+<hr>	
+</div>
+<div class="row">
+	<div class="span5">
+		<h2>Name: {{user.get_full_name}}</h2>
+		<h2>Email: {{user.email}}</h2>
+		<hr>
+		<h2>{{highlights}} highlights since {{user.date_joined|date}}</h2>
+	</div>
+</div>
+</div>
+{% endblock %}

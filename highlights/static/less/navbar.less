@@ -45,7 +45,7 @@
   display: block;
   width: 18px;
   height: 2px;
-  background-color: #f5f5f5;
+  background-color: #b4b1b1;
   .border-radius(1px);
   .box-shadow(0 1px 0 rgba(0,0,0,.25));
 }
@@ -67,14 +67,16 @@
   }
   // Website or project name
   .brand {
-    float: left;
+    //float: left;
+    //display: block;
     display: block;
-    padding: 8px 20px 12px;
-    margin-left: -20px; // negative indent to left-align the text down the page
-    font-size: 20px;
-    font-weight: 200;
-    line-height: 1;
-    color: @white;
+    padding: 4px 20px;
+    float: left;
+    //margin-left: -20px; // negative indent to left-align the text down the page
+    //font-size: 20px;
+    //font-weight: 200;
+    //line-height: 1;
+    //color: @white;
   }
   // Plain text in topbar
   .navbar-text {
@@ -222,19 +224,20 @@
   line-height: 19px;
   color: @navbarLinkColor;
   text-decoration: none;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  //text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 255.25);
 }
 // Hover
 .navbar .nav > li > a:hover {
   background-color: @navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from .active
-  color: @navbarLinkColorHover;
+  //color: @navbarLinkColorHover;
   text-decoration: none;
 }
 
 // Active nav items
 .navbar .nav .active > a,
 .navbar .nav .active > a:hover {
-  color: @navbarLinkColorActive;
+  //color: @navbarLinkColorActive;
   text-decoration: none;
   background-color: @navbarLinkBackgroundActive;
 }

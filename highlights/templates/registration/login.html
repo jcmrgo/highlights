@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="masthead">
+  <div class="login-home-logo">
+    <img src="{{ STATIC_URL }}img/logo.png" />
+  </div>
+  {% if form.errors %}
+  <p>Your username and/or password didn't match. Please try again.</p>
+  {% endif %}
+  <form class="form" method="post">{% csrf_token %}
+  <fieldset>  
+    <div class="control-group">
+      <div class="controls"><input id="id_username" type="text" name="username" maxlength="30" placeholder="Username"/></div>
+    </div>
+    <div class="control-group">
+      <div class="controls"><input type="password" name="password" id="id_password" placeholder="Password" /></div>
+    </div>
+  </fieldset>
+  <div class="login-actions">
+  <button type="submit" class="btn btn-pink">Login</button>
+  </div>
+  </form>
+</div>
+{% endblock %}

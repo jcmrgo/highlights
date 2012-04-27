@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block content %}
+<div class="dashboard">
+	<h5 class="h-date"><span>Major Events</span></h5>
+	<div class="h-date"></div>
+	<table class="table">
+		<thead>
+			<tr>
+				<td><span class="big-number {{ colores|random }}">{{happy}}</span></td>
+				<td><span class="big-number {{ colores|random }}">{{sad}}</span></td>
+				<td><span class="big-number {{ colores|random }}">{{angry}}</span></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="/emotion/1"><span class="emotion emotion-1">:)</span></a></td>
+				<td><a href="/emotion/2"><span class="emotion emotion-2">:)</span></a></td>
+				<td><a href="/emotion/3"><span class="emotion emotion-3">:)</span></a></td>
+			</tr>
+		</tbody>
+	</table>
+	<h5 class="h-date"><span>Hashtags</span></h5>
+	<div class="h-date"></div>
+	<div id="chart_div" style="width: 360px; height: 320px;"></div>
+	<h5 class="h-date"><span>Emotions</span></h5>
+	<div class="h-date"></div>
+	<div id="chart_line_div" style="width: 360px; height: 320px;"></div>
+</div>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Hashtag', 'Highlights with Hashtag'],
+          ['Work',     11],
+          ['Barcelona',      2],
+          ['Bosco',  2],
+          ['Austin', 2],
+          ['Music',    7]
+        ]);
+
+        var options = {
+          title: 'My Hashtags',
+          backgroundColor: 'transparent'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Week', 'Emotions'],
+          ['W 1',  1],
+          ['W 2',  2],
+          ['W 3',  3],
+          ['W 4',  2],
+          ['W 5',  3],
+          ['W 6',  3],
+          ['W 7',  1],
+          ['W 8',  1],
+          ['W 9',  2],
+        ]);
+
+        var options = {
+          title: 'Emotions',
+          backgroundColor: 'transparent'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_line_div'));
+        chart.draw(data, options);
+      }
+    </script>
+{% endblock %}

@@ -27,3 +27,244 @@
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: 'MenschRegular';
+  src: url('../fonts/mensch-wf.eot');
+  src: url('../fonts/mensch-wf.eot?#iefix') format('embedded-opentype'), url('../fonts/mensch-wf.woff') format('woff'), url('../fonts/mensch-wf.ttf') format('truetype'), url('../fonts/mensch-wf.svg#MenschMenschRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MenschBold';
+  src: url('../fonts/mensch-bold-wf.eot');
+  src: url('../fonts/mensch-bold-wf.eot?#iefix') format('embedded-opentype'), url('../fonts/mensch-bold-wf.woff') format('woff'), url('../fonts/mensch-bold-wf.ttf') format('truetype'), url('../fonts/mensch-bold-wf.svg#MenschMenschBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MenschBoldInline';
+  src: url('../fonts/mensch-inline-wf.eot');
+  src: url('../fonts/mensch-inline-wf.eot?#iefix') format('embedded-opentype'), url('../fonts/mensch-inline-wf.woff') format('woff'), url('../fonts/mensch-inline-wf.ttf') format('truetype'), url('../fonts/mensch-inline-wf.svg#MenschMenschBoldInline') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MenschThin';
+  src: url('../fonts/mensch-thin-wf.eot');
+  src: url('../fonts/mensch-thin-wf.eot?#iefix') format('embedded-opentype'), url('../fonts/mensch-thin-wf.woff') format('woff'), url('../fonts/mensch-thin-wf.ttf') format('truetype'), url('../fonts/mensch-thin-wf.svg#MenschMenschThin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-image: url(../img/scribble_light.png);
+}
+.icon-gray {
+  background-image: url("../img/glyphicons-halflings-gray.png");
+}
+.masthead {
+  text-align: center;
+}
+.btn-pink,
+.btn-pink:hover {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+}
+.btn-pink.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+.btn-pink {
+  background-color: #ff525f;
+  background-image: -moz-linear-gradient(top, #ff4c6b, #ff5a4c);
+  background-image: -ms-linear-gradient(top, #ff4c6b, #ff5a4c);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff4c6b), to(#ff5a4c));
+  background-image: -webkit-linear-gradient(top, #ff4c6b, #ff5a4c);
+  background-image: -o-linear-gradient(top, #ff4c6b, #ff5a4c);
+  background-image: linear-gradient(top, #ff4c6b, #ff5a4c);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4c6b', endColorstr='#ff5a4c', GradientType=0);
+  border-color: #ff5a4c #ff5a4c #ff1400;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+.btn-pink:hover,
+.btn-pink:active,
+.btn-pink.active,
+.btn-pink.disabled,
+.btn-pink[disabled] {
+  background-color: #ff5a4c;
+}
+.btn-pink:active,
+.btn-pink.active {
+  background-color: #ff2b19 \9;
+}
+.login-home-logo {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+.highlight-form ul li {
+  list-style: none;
+}
+.highlights-feed .bigness-5 .first-word {
+  font: 58px/58px "MenschBoldInline", "Helvetica Neue", Helvetica;
+}
+.highlights-feed .bigness-4 .first-word {
+  line-height: 50px;
+  font-size: 50px;
+}
+.highlights-feed .bigness-3 .first-word {
+  font-size: 40px;
+  line-height: 40px;
+}
+.highlights-feed .bigness-2 .first-word {
+  font-size: 34px;
+  line-height: 34px;
+}
+.highlights-feed .bigness-1 .first-word {
+  font-size: 30px;
+  line-height: 30px;
+}
+.highlights-feed p {
+  font: 26px/28px "MenschBold", "Helvetica Neue", Helvetica;
+}
+.highlights-feed p a {
+  color: #c5c5c5;
+  font: 18px/28px "Helvetica Neue", Helvetica;
+}
+.highlights-feed p.azul {
+  color: #00afdb;
+}
+.highlights-feed p.verde {
+  color: #73c167;
+}
+.highlights-feed p.rosa {
+  color: #f1607c;
+}
+.highlights-feed p.amarillo {
+  color: #ffd478;
+}
+.highlights-feed p.celeste {
+  color: #9de0d3;
+}
+.highlights-feed p.naranja {
+  color: #f79762;
+}
+.highlights-feed p.fiucha {
+  color: #ef5091;
+}
+.highlights-feed p.salmon {
+  color: #f48987;
+}
+.highlights-feed p.verde_limon {
+  color: #a0cf67;
+}
+.highlights-feed p.aqua {
+  color: #22bcb9;
+}
+.highlights-feed .first-word {
+  text-transform: uppercase;
+}
+.highlights-feed h5.h-date {
+  text-align: center;
+  margin-bottom: 0px;
+  color: #c5c5c5;
+}
+.highlights-feed h5.h-date span {
+  padding-right: 15px;
+  padding-left: 15px;
+  background-image: url(../img/scribble_light.png);
+}
+.highlights-feed div.h-date {
+  position: relative;
+  bottom: 10px;
+  border-top: 1px solid #c5c5c5;
+  z-index: -1;
+}
+.highlights-feed span.emotion {
+  display: block;
+  text-indent: -9999px;
+}
+.highlights-feed span.emotion.emotion-1 {
+  background: url(../img/face_happy.png) no-repeat;
+}
+.highlights-feed span.emotion.emotion-2 {
+  background: url(../img/face_sad.png) no-repeat;
+}
+.highlights-feed span.emotion.emotion-3 {
+  background: url(../img/face_angry.png) no-repeat;
+}
+.highlights-feed div.emo-and-hashs {
+  margin-bottom: 10px;
+  margin-top: -5px;
+}
+.dashboard h5.h-date {
+  text-align: center;
+  margin-bottom: 0px;
+  color: #c5c5c5;
+}
+.dashboard h5.h-date span {
+  padding-right: 15px;
+  padding-left: 15px;
+  background-image: url(../img/scribble_light.png);
+}
+.dashboard div.h-date {
+  position: relative;
+  bottom: 10px;
+  border-top: 1px solid #c5c5c5;
+  z-index: -1;
+}
+.dashboard span.azul {
+  color: #00afdb;
+}
+.dashboard span.verde {
+  color: #73c167;
+}
+.dashboard span.rosa {
+  color: #f1607c;
+}
+.dashboard span.amarillo {
+  color: #ffd478;
+}
+.dashboard span.celeste {
+  color: #9de0d3;
+}
+.dashboard span.naranja {
+  color: #f79762;
+}
+.dashboard span.fiucha {
+  color: #ef5091;
+}
+.dashboard span.salmon {
+  color: #f48987;
+}
+.dashboard span.verde_limon {
+  color: #a0cf67;
+}
+.dashboard span.aqua {
+  color: #22bcb9;
+}
+.dashboard .big-number {
+  font: 68px/68px "MenschBoldInline", "Helvetica Neue", Helvetica;
+}
+.dashboard td {
+  text-align: center;
+}
+.dashboard span.emotion {
+  display: block;
+  text-indent: -9999px;
+  line-height: 30px;
+}
+.dashboard span.emotion.emotion-1 {
+  background: url(../img/face_happy.png) no-repeat;
+  background-position: 50%;
+}
+.dashboard span.emotion.emotion-2 {
+  background: url(../img/face_sad.png) no-repeat;
+  background-position: 50%;
+}
+.dashboard span.emotion.emotion-3 {
+  background: url(../img/face_angry.png) no-repeat;
+  background-position: 50%;
+}
+.dashboard table tbody tr:hover td {
+  background-color: transparent;
+}

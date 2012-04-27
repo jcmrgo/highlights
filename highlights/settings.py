@@ -159,6 +159,11 @@ LOGGING = {
         },
     }
 }
+
+AUTH_PROFILE_MODULE = 'posts.UserProfile'
+
+LOGIN_URL = "/login/"
+
 try:
     from settings_local import *
 except ImportError:
