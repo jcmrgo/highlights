@@ -34,11 +34,9 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Hashtag', 'Highlights with Hashtag'],
-          ['Work',     11],
-          ['Barcelona',      2],
-          ['Bosco',  2],
-          ['Austin', 2],
-          ['Music',    7]
+          {% for hash, num in hash_highs %}
+          ['{{hash}}', {{num}}],
+          {% endfor %}
         ]);
 
         var options = {

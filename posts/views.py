@@ -29,25 +29,35 @@ def highlights_dashboard(request):
 	happy = highlights.filter(emotion=1, bigness=5).count()
 	sad = highlights.filter(emotion=2, bigness=5).count()
 	angry = highlights.filter(emotion=3, bigness=5).count()
+	hashtags = HighlightHashtag.objects.filter(highlight__user=request.user)
+	hash_highs = []
+	for ht in hashtags:
+		hash_highs.append([ht.hashtag, HighlightHashtag.objects.filter(hashtag=ht.hashtag, highlight__user=request.user).count()])
 	colores = ["azul", "verde", "rosa","amarillo","celeste","naranja","fiucha","salmon","verde_limon","aqua"]
-	return render(request,'dashboard.html',{'highlights':highlights,'colores':colores, 'happy':happy,'sad':sad,'angry':angry})
+	return render(request,'dashboard.html',{'highlights':highlights,'colores':colores, 'happy':happy,'sad':sad,'angry':angry, 'hash_highs':hash_highs})
+
+@login_required
+def public_hashtag_highlights(request, hashtag):
+	highlights = [h.highlight for h in HighlightHashtag.objects.filter(hashtag__iexact=hashtag, highlight__share=True)]
+	colores = ["azul", "verde", "rosa","amarillo","celeste","naranja","fiucha","salmon","verde_limon","aqua"]
+	return render(request,'home.html',{'highlights':highlights,'colores':colores})
 
 
 @login_required
 def highlights_emotions(request, emotion):
-	highlights = Highlight.objects.filter(user=request.user, emotion=emotion)
+	highlights = Highlight.objects.filter(user=request.user, emotion=emotion).order_by('-date_created')
 	colores = ["azul", "verde", "rosa","amarillo","celeste","naranja","fiucha","salmon","verde_limon","aqua"]
 	return render(request,'home.html',{'highlights':highlights,'colores':colores})
 
 @login_required
 def highlights_bigness(request, bigness):
-	highlights = Highlight.objects.filter(user=request.user, bigness=bigness)
+	highlights = Highlight.objects.filter(user=request.user, bigness=bigness).order_by('-date_created')
 	colores = ["azul", "verde", "rosa","amarillo","celeste","naranja","fiucha","salmon","verde_limon","aqua"]
 	return render(request,'home.html',{'highlights':highlights,'colores':colores})
 
 @login_required
 def highlights_public(request):
-	highlights = Highlight.objects.filter(share=True)
+	highlights = Highlight.objects.filter(share=True).order_by('-date_created')
 	colores = ["azul", "verde", "rosa","amarillo","celeste","naranja","fiucha","salmon","verde_limon","aqua"]
 	return render(request,'home.html',{'highlights':highlights,'colores':colores})
 
@@ -55,6 +65,7 @@ def highlights_public(request):
 def user_settings(request):
 	highlights = Highlight.objects.filter(user=request.user).count()
 	return render(request,'settings/settings.html',{'highlights':highlights})
+
 
 @login_required
 def add_highlight(request):
